@@ -7,8 +7,12 @@
  *
  * @author Carson Wood/carsnwd, https://github.com/carsnwd
  */
+
+/**
+ * ADD STATE PATTERN FOR SESSION STUFF!!!!
+ */
+var session = 'f'; //Used to switch between sessions: f = no active session, b = break, w = work
 $(document).ready(function(){
-		var session = 'f'; //Used to switch between sessions: f = no active session, b = break, w = work
 		document.getElementById("readyButton").addEventListener("click",function(e){
 		if(session == 'f'){ //If no active session, start one.
 			session = 'w'; //Session now active.
@@ -29,12 +33,15 @@ $(document).ready(function(){
 			$("#tomato").rotate({ angle:0,animateTo:360,easing: $.easing.easeInOutExpo })
 			timer(0,2,'b');
 		}else if(session == 'b'){ //If the work session has ended, switch to green tomato
+			this.session = 'b';
 			$("#tomato").attr('src', 'greenTomato.png').load(function(){this.width});
 			$("#tomato").rotate({ angle:0,animateTo:360,easing: $.easing.easeInOutExpo }) 
 			timer(0,2,'f');
 		}else{
 			$("#tomato").rotate({ angle:0,animateTo:360,easing: $.easing.easeInOutExpo })
-			session = 'f';
+			this.session = 'f';
+			time.innerHTML = "Finished!";
+			document.title = "Finished!";
 		}
 	}
 
