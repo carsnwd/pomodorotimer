@@ -28,13 +28,13 @@ $(document).ready(function(){
 			sessionActive = true;
 			$("#tomato").attr('src', 'redTomato.png').load(function(){this.width});
 			$("#tomato").rotate({ angle:0,animateTo:360,easing: $.easing.easeInOutExpo })
-			timer(25,0,'b');
+			timer(0,1500,'b');
 			$("#readyButton").attr('class', 'btn btn-danger');
 		}else if(session == 'b'){ //If the work session has ended, switch to green tomato
 			this.session = 'b';
 			$("#tomato").attr('src', 'greenTomato.png').load(function(){this.width});
 			$("#tomato").rotate({ angle:0,animateTo:360,easing: $.easing.easeInOutExpo }) 
-			timer(5,0,'f');
+			timer(0,300,'f');
 			$("#readyButton").attr('class', 'btn btn-success');
 		}else{
 			$("#tomato").rotate({ angle:0,animateTo:360,easing: $.easing.easeInOutExpo })

@@ -1,4 +1,23 @@
 #tomato {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
 	height: 200px;
 	width: 200px;
+}
+
+#time{
+	text-align: center;
+	font-family: "Arial";
+	font-weight: bold;
+	font-size: 48px;
+}
+
+#readyButton{
+	font-size: 28px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
 }
